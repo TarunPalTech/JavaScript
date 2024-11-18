@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Creation in DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    const div = document.createElement("div");
+    console.log(div);
+    div.className = "main";
+    div.id = Math.round(Math.random()*10+1);
+    div.setAttribute('title','generated title');
+    div.style.backgroundColor = "orange";
+    div.style.padding = "12px";
+    // first method......
+    // div.innerText = "Tarun Pal";
+    /* 
+        first method or second method mein basic difference yahi hai ki div.innerText value ko pehle document se lekar aata hai fir use overwrite karta hai but second method direct hi setAttribute() ki tarah overwrite kar deta hai....
+    */
+    //  second method.....
+    const addText = document.createTextNode("Tarun Pal");
+    div.appendChild(addText);
+    document.body.appendChild(div);
+</script>
+</html>
